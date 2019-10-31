@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/dp_2">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -29,24 +30,26 @@
                     android:rotation="270"
                     android:gravity="center"
                     android:layout_centerInParent="true"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:id="@+id/status_text"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/dp_20"
-                android:layout_gravity="center_vertical">
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_5">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/orderNo"
+                    android:id="@+id/order_no"
                     android:text="Hello"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/orderContents"
-                    android:layout_below="@id/orderNo"
-                    android:text="Hi there "
+                    android:id="@+id/order_contents"
+                    android:layout_below="@id/order_no"
+                    android:text="Hi there !"
                     android:layout_marginTop="@dimen/dp_5"/>
 
 

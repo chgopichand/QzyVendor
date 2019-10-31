@@ -14,6 +14,7 @@ import com.qzy.vendor.R;
 
 class MainRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Activity activity;
+    RecyclerView orderRecycler;
 
 
     public MainRecyclerAdapter(Activity activity) {
@@ -37,7 +38,14 @@ class MainRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }else if(position == 2){
             orderMainViewHolder.textView.setText("Previous Orders");
         }
-        orderMainViewHolder.recyclerView.setLayoutManager(new LinearLayoutManager(activity,RecyclerView.VERTICAL,false));
+        orderRecycler = orderMainViewHolder.recyclerView;
+        setOrderAdapter();
+    }
+
+    private void setOrderAdapter() {
+        orderRecycler.setLayoutManager(new LinearLayoutManager(activity,RecyclerView.VERTICAL,false));
+        OrderRecyclerAdapter orderRecyclerAdapter = new OrderRecyclerAdapter(activity);
+        orderRecycler.setAdapter(orderRecyclerAdapter);
     }
 
     @Override
@@ -54,4 +62,6 @@ class MainRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             recyclerView = view.findViewById(R.id.main_recycler_item);
         }
     }
+
+
 }

@@ -6,96 +6,119 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_constraint_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/cardview_dark_background"
-        android:id="@+id/header">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@color/white">
-
-            <ImageView
-                android:id="@+id/menuicon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dp_20"
-                app:srcCompat="@drawable/ic_menu_black" />
-
-            <TextView
-                android:id="@+id/mallName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dp_20"
-                android:layout_toEndOf="@+id/menuicon"
-                android:fontFamily="sans-serif-medium"
-                android:letterSpacing="0.01"
-                android:text="MCD"
-                android:textColor="#de000000"
-                android:textSize="25sp"
-                android:textStyle="normal" />
-
-            <RelativeLayout
-                android:layout_height="@dimen/dp_60"
-                android:layout_width="@dimen/dp_60"
-                android:layout_marginEnd="@dimen/dp_10"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:id="@+id/notif">
-                <RelativeLayout
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/round_shop">
-
-                    <ImageView
-                        android:layout_centerInParent="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/ic_notifications_none" />
-
-                </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/cart_count"
-                    android:layout_width="@dimen/dp_30"
-                    android:layout_height="@dimen/dp_30"
-                    android:background="@drawable/round_shopping"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:visibility="gone"
-                   />
-            </RelativeLayout>
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/cardview_dark_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_80"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/menuicon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_20"
+                    app:srcCompat="@drawable/ic_menu_black" />
+
+                <TextView
+                    android:id="@+id/mallName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_toEndOf="@+id/menuicon"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.01"
+                    android:text="MCD"
+                    android:textColor="#de000000"
+                    android:textSize="25sp"
+                    android:textStyle="normal" />
+
+                <RelativeLayout
+                    android:id="@+id/notif"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_60"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp_10">
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_shop">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:srcCompat="@drawable/ic_notifications_none" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/cart_count"
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/round_shopping"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_constraint_1">
+
+        <FrameLayout
+            android:id="@+id/main_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/peru"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        tools:layout_editor_absoluteX="411dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

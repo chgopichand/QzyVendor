@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.qzy.vendor.ui.Performance.NotificationsFragment"
+        android:name="com.qzy.vendor.ui.Performance.PerformanceFragment"
         android:label="@string/title_performance"
         tools:layout="@layout/fragment_menu" />
 </navigation>
