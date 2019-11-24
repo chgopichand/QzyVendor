@@ -4,9 +4,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    android:background="@color/colorBG">
+    android:background="@color/grey">
+
+    <com.qzy.vendor.qzyCustom.QzyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/revenue"
+        app:Font="Montserrat-Medium"
+        android:id="@+id/revenue_header"
+        android:textSize="@dimen/sp_18"
+        android:textColor="@color/black"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="@dimen/dp_150"
+        android:visibility="visible"
+        android:orientation="horizontal"
+        android:id="@+id/revenue_recycler"
+        android:layout_below="@id/revenue_header"
+        android:layout_marginTop="@dimen/dp_10"/>
+
+    <com.qzy.vendor.qzyCustom.QzyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ratings"
+        app:Font="Montserrat-Medium"
+        android:id="@+id/ratings_header"
+        android:textSize="@dimen/sp_18"
+        android:layout_below="@id/revenue_recycler"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textColor="@color/black"/>
+
+    <com.qzy.vendor.qzyCustom.QzyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2"
+        android:id="@+id/rating"
+        android:text="Avg Rating 3.6"
+        android:layout_below="@id/rating_bar"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/sp_15"
+        app:Font="Montserrat-Medium" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="2.2"
+        android:stepSize="0.1"
+        android:visibility="visible"
+        android:layout_below="@id/ratings_header"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/RatingBar"
+        android:id="@+id/rating_bar"
+        android:isIndicator="true"
+        android:secondaryProgressTint="#00000000"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rating"
+        android:id="@+id/rating_detail_recycler"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp_10"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/see_reviews"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/see_reviews"
+        android:layout_below="@id/rating_detail_recycler"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/goodgreen"
+        android:textColor="@color/white"/>
+
+
+
 </RelativeLayout>

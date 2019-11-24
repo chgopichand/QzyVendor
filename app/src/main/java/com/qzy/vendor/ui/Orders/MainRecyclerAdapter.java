@@ -24,33 +24,53 @@ class MainRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(activity).inflate(R.layout.orders_main_recyler, parent, false);
-        return new OrdersMainViewHolder(view);
+        if (viewType == -1){
+            View view = LayoutInflater.from(activity).inflate(R.layout.orders_main_recyler, parent, false);
+            return new OrdersMainViewHolder(view);
+        }else {
+            View view = LayoutInflater.from(activity).inflate(R.layout.layout_empty, parent, false);
+            return new ItemHolder(view);
+        }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        OrdersMainViewHolder orderMainViewHolder = (OrdersMainViewHolder) holder;
-        if(position == 0 ){
-            orderMainViewHolder.textView.setText("Order Requests");
-        }else if(position == 1){
-            orderMainViewHolder.textView.setText("Accepted Orders");
-        }else if(position == 2){
-            orderMainViewHolder.textView.setText("Previous Orders");
+        String orderType = null;
+        if(holder instanceof OrdersMainViewHolder) {
+            OrdersMainViewHolder orderMainViewHolder = (OrdersMainViewHolder) holder;
+            if (position == 0) {
+                orderMainViewHolder.textView.setText("Order Requests");
+                orderType = "tostart";
+            } else if (position == 1) {
+                orderMainViewHolder.textView.setText("Pending Orders");
+                orderType = "pending";
+            } else if (position == 2) {
+                orderMainViewHolder.textView.setText("Previous Orders");
+                orderType = "completed";
+            }
+            orderRecycler = orderMainViewHolder.recyclerView;
+            setOrderAdapter(orderType);
         }
-        orderRecycler = orderMainViewHolder.recyclerView;
-        setOrderAdapter();
     }
 
-    private void setOrderAdapter() {
+    private void setOrderAdapter(String orderType) {
         orderRecycler.setLayoutManager(new LinearLayoutManager(activity,RecyclerView.VERTICAL,false));
-        OrderRecyclerAdapter orderRecyclerAdapter = new OrderRecyclerAdapter(activity);
+        OrderRecyclerAdapter orderRecyclerAdapter = new OrderRecyclerAdapter(activity,orderType);
         orderRecycler.setAdapter(orderRecyclerAdapter);
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if(position<3){
+            return -1;
+        }else{
+            return -2;
+        }
     }
 
     private class OrdersMainViewHolder extends RecyclerView.ViewHolder {
@@ -63,5 +83,10 @@ class MainRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
+    private class ItemHolder extends RecyclerView.ViewHolder {
+        public ItemHolder(View view) {
+            super(view);
+        }
+    }
 
 }

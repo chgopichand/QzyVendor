@@ -6,6 +6,26 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/nav_selector</item>
     </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlActivated">@color/ratingyellow</item>
+        <item name="colorControlNormal">@color/lightgrey</item>
+    </style>
+
+    <style name="RatingProgressBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="colorAccent">@color/progressBarActivated</item>
+        <item name="android:progressBackgroundTint">@color/gray</item>
+    </style>
+
+    <style name="StockToggleButton" parent="@style/Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:textColorPrimaryDisableOnly">#b71c1c</item>
+        <item name="android:colorControlActivated">#1b5e20</item>
+        <item name="android:colorForeground">#f57f17</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
+
 
 </resources>

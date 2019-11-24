@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_90"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_toStartOf="@+id/item_stock">
+        <com.qzy.vendor.qzyCustom.QzyTextView
+            android:id="@+id/itemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_15"
+            android:textColor="#1d1d1d"
+            android:lineSpacingExtra="2.5sp"
+            android:text="Gobi Manchuria"
+            app:Font="Montserrat-SemiBold"/>
+        <com.qzy.vendor.qzyCustom.QzyTextView
+            android:layout_below="@+id/itemName"
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/itemPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_13"
+            android:textColor="#1d1d1d"
+            android:lineSpacingExtra="2.5sp"
+            android:text="Rs.150"
+            app:Font="Montserrat-Medium"/>
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/item_stock"
+        android:layout_width="@dimen/dp_75"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:layout_centerVertical="true">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/stock_switch"
+            android:checked="true"
+            app:thumbTint="@color/colorPrimary"
+            app:trackTint="@color/colorPrimaryLight"
+            />
+
+        <com.qzy.vendor.qzyCustom.QzyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stock_switch"
+            android:text="In Stock"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/sp_10"
+            android:layout_marginTop="@dimen/dp_2"
+            android:id="@+id/stock_status"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

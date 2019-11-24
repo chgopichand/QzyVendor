@@ -3,6 +3,7 @@
 
     <color name="colorBG">#F3F3F3</color>
     <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryLight">#0fb8a6</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="grey">#f2f2f2</color>
@@ -148,4 +149,9 @@
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
     <color name="cardview_dark_background">#FF424242</color>
+    <color name="ratingyellow">#f0d020</color>
+    <color name="goodgreen">#7dbc17</color>
+    <color name="progressBarActivated">#707070</color>
+    <color name="menuHighlightColor">#CD853F</color>
+    <color name="navBlue">#6200EE</color>
 </resources>

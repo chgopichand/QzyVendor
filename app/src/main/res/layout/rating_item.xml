@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_25"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rating_item">
+
+    <com.qzy.vendor.qzyCustom.QzyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rating_num"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_2"
+        android:text="5"
+        app:Font="Montserrat-Bold"
+        android:textColor="@color/black"/>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/rating_num"
+        android:theme="@style/RatingProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progress="77"
+        android:max="100"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:id="@+id/rating_progress" />
+
+</RelativeLayout>

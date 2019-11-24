@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_20"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/order_itemline">
+    
+    <com.qzy.vendor.qzyCustom.QzyTextView
+        android:layout_width="@dimen/sp_240"
+        android:layout_height="wrap_content"
+        android:id="@+id/order_itemname"
+        app:Font="Montserrat-Regular"
+        android:textSize="@dimen/sp_12"
+        android:text="steamed veg momos"/>
+
+    <com.qzy.vendor.qzyCustom.QzyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/order_itemquantity"
+        app:Font="Montserrat-Bold"
+        android:textSize="@dimen/sp_12"
+        android:layout_toEndOf="@id/order_itemname"
+        android:layout_marginStart="@dimen/dp_2"
+        android:text="x 2"/>
+
+
+</RelativeLayout>

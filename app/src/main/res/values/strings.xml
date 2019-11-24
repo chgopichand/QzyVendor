@@ -3,4 +3,11 @@
     <string name="title_orders">Orders</string>
     <string name="title_menu">Menu</string>
     <string name="title_performance">Performance</string>
+    <string name="revenue">REVENUE</string>
+    <string name="ratings">RATINGS</string>
+    <string name="see_reviews">SEE ALL REVIEWS</string>
+    <string name="see_details">SEE DETAILS</string>
+    <string name="accept">ACCEPT</string>
+    <string name="decline">DECLINE</string>
+    <string name="add">ADD</string>
 </resources>
